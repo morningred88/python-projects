@@ -52,22 +52,30 @@ class GuiRectangle(Rectangle):
 
         # This method keep the turtle screen stay
         turtle.done()
-        
+
+
+# Create GuiRectangle object
+gui_rectangle = GuiRectangle(
+    Point(randint(0, 400), randint(0, 400)),
+    Point(randint(10, 400), randint(10, 400))
+)
+my_turtle = turtle.Turtle()
+gui_rectangle.draw(canvas=my_turtle)
 
 # Create rectangle object
-rectangle = Rectangle(Point(randint(0, 400), randint(0, 400)),
-    Point(randint(10, 400), randint(10, 400)))
-
-# Print rectangle coordinates
-print(f"Rectangle Coordinates: ({rectangle.point1.x}, {rectangle.point1.y}) \
-and ({rectangle.point2.x}, {rectangle.point2.y})")
-
-# Get point and area from user
-user_point = Point(float(input("Guess x: ")),
-                   float(input("Guess y: ")))
-user_area = float(input("Guess rectangle area: "))
-
-# Print out user result
-print(f"Your point was inside rectangle: {user_point.falls_in_rectangle(rectangle)}")
-# print out the absolute value of area difference
-print(f"Your ara was off by {abs(rectangle.area() - user_area)}")
+# rectangle = Rectangle(Point(randint(0, 400), randint(0, 400)),
+#     Point(randint(10, 400), randint(10, 400)))
+#
+# # Print rectangle coordinates
+# print(f"Rectangle Coordinates: ({rectangle.point1.x}, {rectangle.point1.y}) \
+# and ({rectangle.point2.x}, {rectangle.point2.y})")
+#
+# # Get point and area from user
+# user_point = Point(float(input("Guess x: ")),
+#                    float(input("Guess y: ")))
+# user_area = float(input("Guess rectangle area: "))
+#
+# # Print out user result
+# print(f"Your point was inside rectangle: {user_point.falls_in_rectangle(rectangle)}")
+# # print out the absolute value of area difference
+# print(f"Your ara was off by {abs(rectangle.area() - user_area)}")
