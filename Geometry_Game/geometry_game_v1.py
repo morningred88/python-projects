@@ -50,13 +50,10 @@ class GuiRectangle(Rectangle):
         canvas.left(90)
         canvas.forward(self.point2.y - self.point1.y)
 
-        # This method keep the turtle screen stay
-        turtle.done()
-
 
 class GuiPoint(Point):
 
-    def draw_point (self, canvas, size=5, color='red'):
+    def draw(self, canvas, size=5, color='red'):
         canvas.penup()
         canvas.goto(self.x, self.y)
         canvas.pendown()
@@ -68,23 +65,28 @@ gui_rectangle = GuiRectangle(
     Point(randint(0, 400), randint(0, 400)),
     Point(randint(10, 400), randint(10, 400))
 )
-my_turtle = turtle.Turtle()
-gui_rectangle.draw(canvas=my_turtle)
+
 
 # Create rectangle object
-# rectangle = Rectangle(Point(randint(0, 400), randint(0, 400)),
-#     Point(randint(10, 400), randint(10, 400)))
-#
-# # Print rectangle coordinates
-# print(f"Rectangle Coordinates: ({rectangle.point1.x}, {rectangle.point1.y}) \
-# and ({rectangle.point2.x}, {rectangle.point2.y})")
-#
-# # Get point and area from user
-# user_point = Point(float(input("Guess x: ")),
-#                    float(input("Guess y: ")))
-# user_area = float(input("Guess rectangle area: "))
-#
-# # Print out user result
-# print(f"Your point was inside rectangle: {user_point.falls_in_rectangle(rectangle)}")
-# # print out the absolute value of area difference
-# print(f"Your ara was off by {abs(rectangle.area() - user_area)}")
+rectangle = GuiRectangle(Point(randint(0, 400), randint(0, 400)),
+    Point(randint(10, 400), randint(10, 400)))
+
+# Print rectangle coordinates
+print(f"Rectangle Coordinates: ({rectangle.point1.x}, {rectangle.point1.y}) \
+and ({rectangle.point2.x}, {rectangle.point2.y})")
+
+# Get point and area from user
+user_point = GuiPoint(float(input("Guess x: ")),
+                   float(input("Guess y: ")))
+user_area = float(input("Guess rectangle area: "))
+
+# Print out user result
+print(f"Your point was inside rectangle: {user_point.falls_in_rectangle(rectangle)}")
+# print out the absolute value of area difference
+print(f"Your ara was off by {abs(rectangle.area() - user_area)}")
+
+my_turtle = turtle.Turtle()
+rectangle.draw(canvas=my_turtle)
+user_point.draw(canvas=my_turtle)
+# This method keep the turtle screen stay
+turtle.done()
