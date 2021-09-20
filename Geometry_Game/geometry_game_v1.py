@@ -54,6 +54,15 @@ class GuiRectangle(Rectangle):
         turtle.done()
 
 
+class GuiPoint(Point):
+
+    def draw_point (self, canvas, size=5, color='red'):
+        canvas.penup()
+        canvas.goto(self.x, self.y)
+        canvas.pendown()
+        canvas.dot(size, color)
+
+
 # Create GuiRectangle object
 gui_rectangle = GuiRectangle(
     Point(randint(0, 400), randint(0, 400)),
