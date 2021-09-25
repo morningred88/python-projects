@@ -8,7 +8,7 @@ class Bill:
         self.period = period
 
 
-class Roommates:
+class Roommate:
     """
     Creates a roommate who lives in the apartment and pays a share of the bill
     """
@@ -17,8 +17,9 @@ class Roommates:
         self.name = name
         self.days_in_house = days_in_house
 
-    def pays(self, bill):
-        pass
+    def pays(self, bill, roommate2):
+        weight = self.days_in_house/(self.days_in_house + roommate2.days_in_house )
+        return bill.amount * weight
 
 
 class PdfReport:
@@ -33,5 +34,10 @@ class PdfReport:
         pass
 
 
+bill = Bill(120, "March 2021")
+john = Roommate("John", 20)
+marry = Roommate("Mary", 25)
+print(john.pays(bill, marry))
+print(marry.pays(bill, john))
 
 
