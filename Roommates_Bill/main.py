@@ -47,10 +47,12 @@ class PdfReport:
         pdf.cell(w=0, h=80, txt='Flatmates Bill', border=1, align="C", ln=1)
 
         # Insert period
+        pdf.set_font(family='Times', size=14, style='B')
         pdf.cell(w=100, h=40, txt='Period:', border=1)
         pdf.cell(w=200, h=40, txt=bill.period, border=1, ln=1)
 
         # Insert name and due amount of the first flatmate
+        pdf.set_font(family='Times', size=12)
         pdf.cell(w=100, h=40, txt=roommate1.name, border=1)
         pdf.cell(w=200, h=40, txt=due_roommate1, border=1, ln=1)
 
