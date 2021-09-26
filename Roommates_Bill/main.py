@@ -53,12 +53,12 @@ class PdfReport:
 
         # Insert name and due amount of the first flatmate
         pdf.set_font(family='Times', size=12)
-        pdf.cell(w=100, h=40, txt=roommate1.name, border=0)
-        pdf.cell(w=200, h=40, txt=due_roommate1, border=0, ln=1)
+        pdf.cell(w=100, h=25, txt=roommate1.name, border=0)
+        pdf.cell(w=200, h=25, txt=due_roommate1, border=0, ln=1)
 
         # Insert name and due amount of the second flatmate
-        pdf.cell(w=100, h=40, txt=roommate2.name, border=0)
-        pdf.cell(w=200, h=40, txt=due_roommate2, border=0, ln=1)
+        pdf.cell(w=100, h=25, txt=roommate2.name, border=0)
+        pdf.cell(w=200, h=25, txt=due_roommate2, border=0, ln=1)
 
         pdf.output(self.filename)
 
