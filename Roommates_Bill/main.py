@@ -34,8 +34,8 @@ class PdfReport:
         self.filename = filename
 
     def generate(self, roommate1, roommate2, bill):
-        due_roommate1 = str(round(roommate1.pays(bill, roommate2),2))
-        due_roommate2 = str(round(roommate2.pays(bill, roommate1), 2))
+        due_roommate1 = "$" + str(round(roommate1.pays(bill, roommate2),2))
+        due_roommate2 = "$" + str(round(roommate2.pays(bill, roommate1), 2))
         pdf = FPDF(orientation='p', unit='pt', format='A4')
         pdf.add_page()
 
