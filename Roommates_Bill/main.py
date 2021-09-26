@@ -39,8 +39,10 @@ class PdfReport:
         pdf = FPDF(orientation='p', unit='pt', format='A4')
         pdf.add_page()
 
-        # Insert title
-        # Style is bold
+        # Add icon, set the width and height
+        pdf.image("house.png", w=50, h=50)
+
+        # Insert title, set the style to bold
         pdf.set_font(family='Times', size=24, style='B')
         pdf.cell(w=0, h=80, txt='Flatmates Bill', border=1, align="C", ln=1)
 
